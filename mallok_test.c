@@ -223,33 +223,15 @@ void test4() {
 void customTest0() {
 	unsigned long poolSize = 199715099999;
 	void *ptr = NULL;
+	short i;
+	
 	create_pool(poolSize);
 	printf("create_pool(%lu)\n", poolSize);
 
 	printf("my_malloc(%lu), assert:%p\n",poolSize, ptr = my_malloc(poolSize));
 	my_free(ptr);
 	printf("my_free(ptr)\nRepeatedly allocate 49M bytes, then poolSize:\n");
-	printf("my_malloc(49M), assert:%p\n", ptr = my_malloc(49000000));
-	printf("my_malloc(49M), assert:%p\n", ptr = my_malloc(49000000));
-	printf("my_malloc(49M), assert:%p\n", ptr = my_malloc(49000000));
-	printf("my_malloc(49M), assert:%p\n", ptr = my_malloc(49000000));
-	printf("my_malloc(49M), assert:%p\n", ptr = my_malloc(49000000));
-	printf("my_malloc(49M), assert:%p\n", ptr = my_malloc(49000000));
-	printf("my_malloc(49M), assert:%p\n", ptr = my_malloc(49000000));
-	printf("my_malloc(49M), assert:%p\n", ptr = my_malloc(49000000));
-	printf("my_malloc(49M), assert:%p\n", ptr = my_malloc(49000000));
-	printf("my_malloc(49M), assert:%p\n", ptr = my_malloc(49000000));
-	printf("my_malloc(49M), assert:%p\n", ptr = my_malloc(49000000));
-	printf("my_malloc(49M), assert:%p\n", ptr = my_malloc(49000000));
-	printf("my_malloc(49M), assert:%p\n", ptr = my_malloc(49000000));
-	printf("my_malloc(49M), assert:%p\n", ptr = my_malloc(49000000));
-	printf("my_malloc(49M), assert:%p\n", ptr = my_malloc(49000000));
-	printf("my_malloc(49M), assert:%p\n", ptr = my_malloc(49000000));
-	printf("my_malloc(49M), assert:%p\n", ptr = my_malloc(49000000));
-	printf("my_malloc(49M), assert:%p\n", ptr = my_malloc(49000000));
-	printf("my_malloc(49M), assert:%p\n", ptr = my_malloc(49000000));
-	printf("my_malloc(49M), assert:%p\n", ptr = my_malloc(49000000));
-	printf("my_malloc(49M), assert:%p\n", ptr = my_malloc(49000000));
-	printf("my_malloc(49M), assert:%p\n", ptr = my_malloc(49000000));
+	for(i = 0; i < 20; i++)
+		printf("my_malloc(49M), assert:%p\n", ptr = my_malloc(49000000));
 	printf("my_malloc(%lu), assert:%p\n",poolSize, ptr = my_malloc(poolSize));
 }
